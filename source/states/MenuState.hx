@@ -1,8 +1,9 @@
-package;
+package states;
 
 import flixel.FlxG;
 import flixel.ui.FlxButton;
 import flixel.FlxState;
+
 
 class MenuState extends FlxState
 {
