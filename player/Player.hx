@@ -23,8 +23,8 @@ class Player extends FlxSprite
 	private var damageAnimations = [25, 26, 27, 28];
 	private var deathAnimations = [29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39];
 
-	final SPEED:Int = 100;
-	final GRAVITY:Int = 300;
+	final SPEED:Int = 120;
+	final GRAVITY:Int = 500;
 
 	public function new(xPos:Int = 100, yPos:Int = 320)
 	{
@@ -80,7 +80,7 @@ class Player extends FlxSprite
 
 		if (jump && isTouching(FlxObject.FLOOR))
 		{
-			velocity.y = -GRAVITY / 1.7;
+			velocity.y = -GRAVITY / 2.2;
 		}
 	}
 
