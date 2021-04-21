@@ -22,7 +22,7 @@ class PlayState extends FlxState
 
 	override public function create()
 	{
-		bgColor = 0xFF2E3440;
+		bgColor = 0xFF161c28;
 
 		map = new FlxOgmo3Loader("assets/data/polar-knight-testLevel.ogmo", "assets/data/testLevel.json");
 		ground = map.loadTilemap("assets/images/environment/pk-ground-tile.png", "ground");

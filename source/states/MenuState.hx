@@ -11,6 +11,7 @@ class MenuState extends FlxState
 
 	override public function create()
 	{
+		bgColor = 0xFF161c28;
 		PlayButton = new FlxButton(0, 0, "Play", clickPlay);
 		add(PlayButton);
 		PlayButton.screenCenter();
