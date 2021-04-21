@@ -76,11 +76,11 @@ class Player extends FlxSprite
 
 	function jumping()
 	{
-		final jump = FlxG.keys.anyPressed([UP]);
+		final jump = FlxG.keys.justPressed.UP;
 
 		if (jump && isTouching(FlxObject.FLOOR))
 		{
-			velocity.y = -GRAVITY / 1.8;
+			velocity.y = -GRAVITY / 1.7;
 		}
 	}
 

@@ -1,0 +1,79 @@
+{
+  "name": "polar-knight-testLevel",
+  "ogmoVersion": "3.4.0",
+  "levelPaths": ["."],
+  "backgroundColor": "#2e3440ff",
+  "gridColor": "#3c4049cc",
+  "anglesRadians": false,
+  "directoryDepth": 5,
+  "layerGridDefaultSize": {"x": 16, "y": 16},
+  "levelDefaultSize": {"x": 320, "y": 240},
+  "levelMinSize": {"x": 128, "y": 128},
+  "levelMaxSize": {"x": 640, "y": 480},
+  "levelValues": [],
+  "defaultExportMode": ".json",
+  "compactExport": false,
+  "externalScript": "",
+  "playCommand": "",
+  "entityTags": [],
+  "layers": [
+    {
+      "definition": "entity",
+      "name": "entities",
+      "gridSize": {"x": 16, "y": 16},
+      "exportID": "96163127",
+      "requiredTags": [],
+      "excludedTags": []
+    },
+    {
+      "definition": "tile",
+      "name": "ground",
+      "gridSize": {"x": 16, "y": 16},
+      "exportID": "96160614",
+      "exportMode": 0,
+      "arrayMode": 0,
+      "defaultTileset": ""
+    }
+  ],
+  "entities": [
+    {
+      "exportID": "96165142",
+      "name": "player",
+      "limit": 1,
+      "size": {"x": 16, "y": 16},
+      "origin": {"x": 0, "y": 0},
+      "originAnchored": true,
+      "shape": {
+        "label": "Rectangle",
+        "points": [
+          {"x": -1, "y": -1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": 1}
+        ]
+      },
+      "color": "#ff0000ff",
+      "tileX": false,
+      "tileY": false,
+      "tileSize": {"x": 16, "y": 16},
+      "resizeableX": false,
+      "resizeableY": false,
+      "rotatable": false,
+      "rotationDegrees": 360,
+      "canFlipX": false,
+      "canFlipY": false,
+      "canSetColor": false,
+      "hasNodes": false,
+      "nodeLimit": 0,
+      "nodeDisplay": 0,
+      "nodeGhost": true,
+      "tags": [],
+      "values": []
+    }
+  ],
+  "tilesets": [
+    {"label": "groundTile", "path": "../images/pk-ground-tile.png", "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAQCAYAAAB3AH1ZAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAD7SURBVHja7JWxDoIwEIZ/jBMPUBecmFzZeAnegmdi4yHK4mZMGJgY2W4xTUhYTXCsg7kGUVRs1cV/KVyu/T+ud8HTWsOljifMOnD5bcOxFvixPgJwUO1LzwfV2l/BHAgiMjEiQtM09gC7fYkwDG8MxuKcobmTJnxmzkb3zAHAsx1DuS01QxRFASklhBAAgK7rrnKTJHE/hsPSVlWFtr3cdxRFJs4gSimzcsx6CogIRIQsyyZzGKquawBAEASmStYAaZoiz3Pz3vc9iMh8LccYYhgXQtj3wGq90XEcm1JPNaPv+wYGAHiPEwDuhUdjyBAMwBDOAP7/gnd1HgC5LpYJdX0KmgAAAABJRU5ErkJggg==", "tileWidth": 16, "tileHeight": 16, "tileSeparationX": 0, "tileSeparationY": 0, "tileMarginX": 0, "tileMarginY": 0}
+  ]
+}
