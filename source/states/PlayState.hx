@@ -24,7 +24,7 @@ class PlayState extends FlxState
 	{
 		bgColor = 0xFF161c28;
 
-		map = new FlxOgmo3Loader("assets/data/polar-knight-testLevel.ogmo", "assets/data/testLevel.json");
+		map = new FlxOgmo3Loader("assets/data/polar-knight-testLevel.ogmo", "assets/data/level01.json");
 		ground = map.loadTilemap("assets/images/environment/pk-ground-tile.png", "ground");
 		background = map.loadTilemap("assets/images/environment/pk-background-tile.png", "background");
 		foreground = map.loadTilemap("assets/images/environment/pk-foreground-tile.png", "foreground");
