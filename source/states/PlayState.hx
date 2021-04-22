@@ -11,16 +11,27 @@ import player.Player;
 
 class PlayState extends FlxState
 {
-	var player:Player;
+	private var player:Player;
 
-	var map:FlxOgmo3Loader;
-	var ground:FlxTilemap;
-	var background:FlxTilemap;
-	var foreground:FlxTilemap;
-	var snow:FlxTilemap;
-	var backgroundTrees:FlxTilemap;
+	private var map:FlxOgmo3Loader;
+	private var ground:FlxTilemap;
+	private var background:FlxTilemap;
+	private var foreground:FlxTilemap;
+	private var snow:FlxTilemap;
+	private var backgroundTrees:FlxTilemap;
 
-	override public function create()
+	override public function create():Void
+	{
+		instantiateEntities();
+		setUpLevel();
+		addEntities();
+
+		FlxG.camera.follow(player);
+
+		super.create();
+	}
+
+	private function setUpLevel():Void
 	{
 		bgColor = 0xFF161c28;
 
@@ -36,24 +47,28 @@ class PlayState extends FlxState
 		ground.setTileProperties(2, FlxObject.ANY);
 		ground.setTileProperties(3, FlxObject.ANY);
 
+		map.loadEntities(placeEntities, "entities"); // player spawn point position
+	}
+
+	private function instantiateEntities():Void
+	{
+		player = new Player();
+		player.setSize(30, 45);
+		player.offset.set(78, 70);
+	}
+
+	private function addEntities():Void
+	{
 		add(background);
 		// add(snow);
 		add(backgroundTrees);
 		add(ground);
 
-		player = new Player();
-		player.setSize(30, 45);
-		player.offset.set(78, 70);
-		map.loadEntities(placeEntities, "entities"); // player spawn point position
-
 		add(player);
 		add(foreground);
-		FlxG.camera.follow(player);
-
-		super.create();
 	}
 
-	function placeEntities(entity:EntityData)
+	private function placeEntities(entity:EntityData)
 	{
 		if (entity.name == "player")
 		{
