@@ -87,7 +87,7 @@ class Player extends FlxSprite
 	override function update(elapsed:Float)
 	{
 		jumping();
-		super.update(elapsed);
 		movement();
+		super.update(elapsed);
 	}
 }
