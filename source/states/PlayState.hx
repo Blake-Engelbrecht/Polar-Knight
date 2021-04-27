@@ -1,5 +1,7 @@
 package states;
 
+import actors.Enemies;
+import actors.Player;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxState;
@@ -7,11 +9,11 @@ import flixel.addons.editors.ogmo.FlxOgmo3Loader;
 import flixel.group.FlxGroup;
 import flixel.tile.FlxTilemap;
 import flixel.util.FlxCollision;
-import player.Player;
 
 class PlayState extends FlxState
 {
 	private var player:Player;
+	private var enemies:FlxTypedGroup<Enemy>;
 
 	private var map:FlxOgmo3Loader;
 	private var ground:FlxTilemap;
@@ -55,6 +57,8 @@ class PlayState extends FlxState
 		player = new Player();
 		player.setSize(30, 45);
 		player.offset.set(78, 70);
+
+		enemies = new FlxTypedGroup<Enemy>();
 	}
 
 	private function addEntities():Void
@@ -65,6 +69,7 @@ class PlayState extends FlxState
 		add(ground);
 
 		add(player);
+		add(enemies);
 		add(foreground);
 	}
 
@@ -73,6 +78,10 @@ class PlayState extends FlxState
 		if (entity.name == "player")
 		{
 			player.setPosition(entity.x, entity.y);
+		}
+		else if (entity.name == "FlyingEye")
+		{
+			enemies.add(new Enemy(entity.x + 4, entity.y, FlyingEye));
 		}
 	}
 

@@ -1,4 +1,4 @@
-package player;
+package actors;
 
 import flixel.FlxG;
 import flixel.FlxObject;
@@ -44,7 +44,7 @@ class Player extends FlxSprite
 		setFacingFlip(FlxObject.RIGHT, false, false);
 	}
 
-	function movement()
+	public function movement()
 	{
 		final left = FlxG.keys.anyPressed([LEFT]);
 		final right = FlxG.keys.anyPressed([RIGHT]);
