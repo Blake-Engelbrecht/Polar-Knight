@@ -75,13 +75,29 @@ class PlayState extends FlxState
 
 	private function placeEntities(entity:EntityData)
 	{
-		if (entity.name == "player")
+		var x = entity.x;
+		var y = entity.y;
+
+		switch (entity.name)
 		{
-			player.setPosition(entity.x, entity.y);
+			case "player":
+				player.setPosition(x, y);
+
+			case "FlyingEye":
+				enemies.add(new Enemy(x + 4, y, FlyingEye));
 		}
-		else if (entity.name == "FlyingEye")
+	}
+
+	function checkEnemyVision(enemy:Enemy)
+	{
+		if (ground.ray(enemy.getMidpoint(), player.getMidpoint()))
 		{
-			enemies.add(new Enemy(entity.x + 4, entity.y, FlyingEye));
+			enemy.seesPlayer = true;
+			enemy.playerPosition = player.getMidpoint();
+		}
+		else
+		{
+			enemy.seesPlayer = false;
 		}
 	}
 
@@ -89,5 +105,7 @@ class PlayState extends FlxState
 	{
 		super.update(elapsed);
 		FlxG.collide(player, ground);
+		FlxG.collide(enemies, ground);
+		enemies.forEachAlive(checkEnemyVision);
 	}
 }

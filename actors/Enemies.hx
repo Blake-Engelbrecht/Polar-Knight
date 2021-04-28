@@ -1,7 +1,11 @@
 package actors;
 
+import actors.Fsm;
+import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
+import flixel.math.FlxPoint;
+import flixel.math.FlxVelocity;
 
 enum EnemyType
 {
@@ -11,8 +15,13 @@ enum EnemyType
 class Enemy extends FlxSprite
 {
 	final SPEED:Int = 120;
-
 	var type:EnemyType;
+	var brain:FSM;
+	var idleTimer:Float;
+	var moveDirection:Float;
+
+	public var seesPlayer:Bool;
+	public var playerPosition:FlxPoint;
 
 	public function new(xPos:Int = 100, yPos:Int = 50, type:EnemyType)
 	{
@@ -30,6 +39,10 @@ class Enemy extends FlxSprite
 
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
+
+		brain = new FSM(idle);
+		idleTimer = 0;
+		playerPosition = FlxPoint.get();
 	}
 
 	public function movement()
@@ -48,9 +61,48 @@ class Enemy extends FlxSprite
 		}
 	}
 
+	public function idle(elapsed:Float)
+	{
+		if (seesPlayer)
+		{
+			brain.activeState = chase;
+		}
+		else if (idleTimer <= 0)
+		{
+			if (FlxG.random.bool(1))
+			{
+				moveDirection = -1;
+				velocity.x = 0;
+			}
+			else
+			{
+				moveDirection = FlxG.random.int(0, 8) * 45;
+
+				velocity.set(SPEED * 0.5, 0);
+				velocity.rotate(FlxPoint.weak(), moveDirection);
+			}
+			idleTimer = FlxG.random.int(1, 4);
+		}
+		else
+			idleTimer -= elapsed;
+	}
+
+	public function chase(elapsed:Float)
+	{
+		if (!seesPlayer)
+		{
+			brain.activeState = idle;
+		}
+		else
+		{
+			FlxVelocity.moveTowardsPoint(this, playerPosition, Std.int(SPEED));
+		}
+	}
+
 	override public function update(elapsed:Float)
 	{
 		movement();
+		brain.update(elapsed);
 		super.update(elapsed);
 	}
 }
