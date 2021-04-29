@@ -90,7 +90,7 @@ class PlayState extends FlxState
 
 	function checkEnemyVision(enemy:Enemy)
 	{
-		if (ground.ray(enemy.getMidpoint(), player.getMidpoint()))
+		if (enemy.isOnScreen())
 		{
 			enemy.seesPlayer = true;
 			enemy.playerPosition = player.getMidpoint();
