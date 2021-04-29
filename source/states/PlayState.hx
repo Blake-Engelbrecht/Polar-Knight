@@ -105,7 +105,6 @@ class PlayState extends FlxState
 	{
 		super.update(elapsed);
 		FlxG.collide(player, ground);
-		FlxG.collide(enemies, ground);
 		enemies.forEachAlive(checkEnemyVision);
 	}
 }

@@ -15,6 +15,7 @@ enum EnemyType
 class Enemy extends FlxSprite
 {
 	final SPEED:Int = 120;
+	final GRAVITY:Int = 500;
 	var type:EnemyType;
 	var brain:FSM;
 	var idleTimer:Float;
@@ -28,17 +29,17 @@ class Enemy extends FlxSprite
 		super(xPos, yPos);
 		this.type = type;
 
-		drag.x = drag.y = 10;
-		width = 8;
-		height = 14;
-		offset.x = 4;
-		offset.y = 2;
-
 		loadGraphic("assets/images/enemies/FlyingEyeSprite.png", true, 150, 150);
 		animation.add("idle", [0, 1, 2, 3, 4, 5], 6, true);
 
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
+
+		drag.x = drag.y = 10;
+		width = 16;
+		height = 16;
+		offset.x = 76;
+		offset.y = 72;
 
 		brain = new FSM(idle);
 		idleTimer = 0;
@@ -95,7 +96,9 @@ class Enemy extends FlxSprite
 		}
 		else
 		{
-			FlxVelocity.moveTowardsPoint(this, playerPosition, Std.int(SPEED));
+			// FlxVelocity.moveTowardsPoint(this, playerPosition, Std.int(SPEED));
+			velocity.x = -SPEED / 4;
+			velocity.y = 0;
 		}
 	}
 
