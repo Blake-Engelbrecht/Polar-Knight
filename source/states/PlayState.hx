@@ -2,6 +2,7 @@ package states;
 
 import actors.Enemies;
 import actors.Player;
+import environment.Goal;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxState;
@@ -14,6 +15,7 @@ class PlayState extends FlxState
 {
 	private var player:Player;
 	private var enemies:FlxTypedGroup<Enemy>;
+	private var goal:Goal;
 
 	private var map:FlxOgmo3Loader;
 	private var ground:FlxTilemap;
@@ -59,6 +61,9 @@ class PlayState extends FlxState
 		player.offset.set(78, 70);
 
 		enemies = new FlxTypedGroup<Enemy>();
+
+		goal = new Goal(0, 0);
+		goal.setSize(16, 128);
 	}
 
 	private function addEntities():Void
@@ -70,6 +75,7 @@ class PlayState extends FlxState
 
 		add(player);
 		add(enemies);
+		add(goal);
 		add(foreground);
 	}
 
@@ -84,7 +90,10 @@ class PlayState extends FlxState
 				player.setPosition(x, y);
 
 			case "FlyingEye":
-				enemies.add(new Enemy(x + 4, y, FlyingEye));
+				enemies.add(new Enemy(x, y, FlyingEye));
+
+			case "goal":
+				goal.setPosition(x, y);
 		}
 	}
 
@@ -106,5 +115,10 @@ class PlayState extends FlxState
 		super.update(elapsed);
 		FlxG.collide(player, ground);
 		enemies.forEachAlive(checkEnemyVision);
+
+		if (FlxG.overlap(player, goal))
+		{
+			FlxG.switchState(new MenuState());
+		}
 	}
 }

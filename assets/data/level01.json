@@ -32,7 +32,8 @@
         {"name": "player", "id": 0, "_eid": "96165142", "x": 16, "y": 128, "originX": 0, "originY": 0},
         {"name": "FlyingEye", "id": 1, "_eid": "48219581", "x": 624, "y": 288, "originX": 0, "originY": 0},
         {"name": "FlyingEye", "id": 2, "_eid": "48219581", "x": 960, "y": 288, "originX": 0, "originY": 0},
-        {"name": "FlyingEye", "id": 3, "_eid": "48219581", "x": 432, "y": 288, "originX": 0, "originY": 0}
+        {"name": "FlyingEye", "id": 3, "_eid": "48219581", "x": 432, "y": 288, "originX": 0, "originY": 0},
+        {"name": "goal", "id": 12, "_eid": "08200625", "x": 1264, "y": 96, "originX": 0, "originY": 0}
       ]
     },
     {

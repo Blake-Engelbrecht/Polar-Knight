@@ -68,24 +68,6 @@ class Enemy extends FlxSprite
 		{
 			brain.activeState = chase;
 		}
-		else if (idleTimer <= 0)
-		{
-			if (FlxG.random.bool(1))
-			{
-				moveDirection = -1;
-				velocity.x = 0;
-			}
-			else
-			{
-				moveDirection = FlxG.random.int(0, 8) * 45;
-
-				velocity.set(SPEED * 0.5, 0);
-				velocity.rotate(FlxPoint.weak(), moveDirection);
-			}
-			idleTimer = FlxG.random.int(1, 4);
-		}
-		else
-			idleTimer -= elapsed;
 	}
 
 	public function chase(elapsed:Float)
