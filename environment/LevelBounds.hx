@@ -4,10 +4,10 @@ import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.util.FlxColor;
 
-class Goal extends FlxObject
+class LevelBounds extends FlxObject
 {
-	public static var WIDTH(default, never):Int = 16;
-	public static var HEIGHT(default, never):Int = 128;
+	public static var WIDTH(default, never):Int = 1;
+	public static var HEIGHT(default, never):Int = 368;
 
 	public function new(xPos:Float, yPos:Float)
 	{

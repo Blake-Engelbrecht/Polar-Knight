@@ -2,7 +2,9 @@ package states;
 
 import actors.Enemies;
 import actors.Player;
+import environment.DeathPit;
 import environment.Goal;
+import environment.LevelBounds;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxState;
@@ -10,12 +12,15 @@ import flixel.addons.editors.ogmo.FlxOgmo3Loader;
 import flixel.group.FlxGroup;
 import flixel.tile.FlxTilemap;
 import flixel.util.FlxCollision;
+import flixel.util.FlxColor;
 
 class PlayState extends FlxState
 {
 	private var player:Player;
 	private var enemies:FlxTypedGroup<Enemy>;
 	private var goal:Goal;
+	private var deathPit:DeathPit;
+	private var levelBounds:LevelBounds;
 
 	private var map:FlxOgmo3Loader;
 	private var ground:FlxTilemap;
@@ -23,6 +28,9 @@ class PlayState extends FlxState
 	private var foreground:FlxTilemap;
 	private var snow:FlxTilemap;
 	private var backgroundTrees:FlxTilemap;
+
+	private var ending:Bool;
+	private var won:Bool;
 
 	override public function create():Void
 	{
@@ -62,20 +70,27 @@ class PlayState extends FlxState
 
 		enemies = new FlxTypedGroup<Enemy>();
 
+		levelBounds = new LevelBounds(0, 0);
+		levelBounds.setSize(1, 368);
+
 		goal = new Goal(0, 0);
 		goal.setSize(16, 128);
+
+		deathPit = new DeathPit(0, 0);
+		deathPit.setSize(80, 16);
 	}
 
 	private function addEntities():Void
 	{
 		add(background);
-		// add(snow);
 		add(backgroundTrees);
 		add(ground);
 
 		add(player);
 		add(enemies);
+		add(levelBounds);
 		add(goal);
+		add(deathPit);
 		add(foreground);
 	}
 
@@ -94,6 +109,12 @@ class PlayState extends FlxState
 
 			case "goal":
 				goal.setPosition(x, y);
+
+			case "deathPit":
+				deathPit.setPosition(x, y);
+
+			case "levelBounds":
+				levelBounds.setPosition(x, y);
 		}
 	}
 
@@ -110,15 +131,35 @@ class PlayState extends FlxState
 		}
 	}
 
+	function doneFadeOut()
+	{
+		FlxG.switchState(new GameOverState(won));
+	}
+
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		FlxG.collide(player, ground);
-		enemies.forEachAlive(checkEnemyVision);
+
+		if (ending)
+		{
+			return;
+		}
 
 		if (FlxG.overlap(player, goal))
 		{
-			FlxG.switchState(new MenuState());
+			won = true;
+			ending = true;
+			FlxG.camera.fade(FlxColor.BLACK, 0.33, false, doneFadeOut);
 		}
+		else if (FlxG.overlap(player, deathPit))
+		{
+			won = false;
+			ending = true;
+			FlxG.camera.fade(FlxColor.BLACK, 0.33, false, doneFadeOut);
+		}
+
+		FlxG.collide(player, ground);
+		FlxG.collide(player, levelBounds);
+		enemies.forEachAlive(checkEnemyVision);
 	}
 }
