@@ -34,26 +34,8 @@
         {"name": "FlyingEye", "id": 2, "_eid": "48219581", "x": 960, "y": 288, "originX": 0, "originY": 0},
         {"name": "FlyingEye", "id": 3, "_eid": "48219581", "x": 432, "y": 288, "originX": 0, "originY": 0},
         {"name": "goal", "id": 12, "_eid": "08200625", "x": 1264, "y": 96, "originX": 0, "originY": 0},
-        {"name": "deathPit", "id": 13, "_eid": "08200757", "x": 832, "y": 352, "originX": 0, "originY": 0},
-        {"name": "deathPit", "id": 14, "_eid": "08200757", "x": 512, "y": 352, "originX": 0, "originY": 0},
-        {"name": "deathPit", "id": 15, "_eid": "08200757", "x": 592, "y": 352, "originX": 0, "originY": 0},
-        {"name": "deathPit", "id": 16, "_eid": "08200757", "x": 672, "y": 352, "originX": 0, "originY": 0},
-        {"name": "deathPit", "id": 17, "_eid": "08200757", "x": 752, "y": 352, "originX": 0, "originY": 0},
-        {"name": "deathPit", "id": 18, "_eid": "08200757", "x": 912, "y": 352, "originX": 0, "originY": 0},
-        {"name": "deathPit", "id": 19, "_eid": "08200757", "x": 992, "y": 352, "originX": 0, "originY": 0},
-        {"name": "deathPit", "id": 20, "_eid": "08200757", "x": 1072, "y": 352, "originX": 0, "originY": 0},
-        {"name": "deathPit", "id": 21, "_eid": "08200757", "x": 1152, "y": 352, "originX": 0, "originY": 0},
-        {"name": "deathPit", "id": 22, "_eid": "08200757", "x": 1232, "y": 352, "originX": 0, "originY": 0},
-        {"name": "deathPit", "id": 23, "_eid": "08200757", "x": 432, "y": 352, "originX": 0, "originY": 0},
-        {"name": "deathPit", "id": 24, "_eid": "08200757", "x": 352, "y": 352, "originX": 0, "originY": 0},
-        {"name": "deathPit", "id": 25, "_eid": "08200757", "x": 272, "y": 352, "originX": 0, "originY": 0},
-        {"name": "deathPit", "id": 26, "_eid": "08200757", "x": 192, "y": 352, "originX": 0, "originY": 0},
-        {"name": "deathPit", "id": 27, "_eid": "08200757", "x": 112, "y": 352, "originX": 0, "originY": 0},
-        {"name": "deathPit", "id": 28, "_eid": "08200757", "x": 32, "y": 352, "originX": 0, "originY": 0},
-        {"name": "deathPit", "id": 29, "_eid": "08200757", "x": -48, "y": 352, "originX": 0, "originY": 0},
-        {"name": "deathPit", "id": 30, "_eid": "08200757", "x": -128, "y": 352, "originX": 0, "originY": 0},
-        {"name": "levelBounds", "id": 31, "_eid": "08698934", "x": 0, "y": 0, "originX": 0, "originY": 0},
-        {"name": "levelBounds", "id": 32, "_eid": "08698934", "x": 1280, "y": 0, "originX": 0, "originY": 0}
+        {"name": "deathPit", "id": 33, "_eid": "08200757", "x": 0, "y": 352, "originX": 0, "originY": 0},
+        {"name": "levelBounds", "id": 34, "_eid": "08698934", "x": 0, "y": 0, "originX": 0, "originY": 0}
       ]
     },
     {

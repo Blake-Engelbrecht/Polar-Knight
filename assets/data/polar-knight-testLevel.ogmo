@@ -184,7 +184,7 @@
       "exportID": "08200757",
       "name": "deathPit",
       "limit": -1,
-      "size": {"x": 80, "y": 16},
+      "size": {"x": 1280, "y": 16},
       "origin": {"x": 0, "y": 0},
       "originAnchored": true,
       "shape": {
