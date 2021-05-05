@@ -11,7 +11,7 @@
     must travel across the tundra and reach Valhalla or something eventually)
 
 ---
-
+ #### [Play Now](https://blakeengelbrecht95.github.io/Polar-Knight/)
 
 ##### Win Condition:
 - Player reaches right-most side of the map
