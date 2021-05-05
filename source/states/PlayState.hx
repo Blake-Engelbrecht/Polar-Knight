@@ -151,7 +151,7 @@ class PlayState extends FlxState
 			ending = true;
 			FlxG.camera.fade(FlxColor.BLACK, 0.33, false, doneFadeOut);
 		}
-		else if (FlxG.overlap(player, deathPit))
+		else if (FlxG.overlap(player, deathPit) || FlxG.overlap(player, enemies))
 		{
 			won = false;
 			ending = true;
