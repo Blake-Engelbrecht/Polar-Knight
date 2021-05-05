@@ -1,4 +1,4 @@
-package player;
+package actors;
 
 import flixel.FlxG;
 import flixel.FlxObject;
@@ -23,8 +23,8 @@ class Player extends FlxSprite
 	private var damageAnimations = [25, 26, 27, 28];
 	private var deathAnimations = [29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39];
 
-	final SPEED:Int = 100;
-	final GRAVITY:Int = 300;
+	final SPEED:Int = 120;
+	final GRAVITY:Int = 500;
 
 	public function new(xPos:Int = 100, yPos:Int = 320)
 	{
@@ -44,7 +44,7 @@ class Player extends FlxSprite
 		setFacingFlip(FlxObject.RIGHT, false, false);
 	}
 
-	function movement()
+	public function movement()
 	{
 		final left = FlxG.keys.anyPressed([LEFT]);
 		final right = FlxG.keys.anyPressed([RIGHT]);
@@ -76,18 +76,18 @@ class Player extends FlxSprite
 
 	function jumping()
 	{
-		final jump = FlxG.keys.anyPressed([UP]);
+		final jump = FlxG.keys.justPressed.UP;
 
 		if (jump && isTouching(FlxObject.FLOOR))
 		{
-			velocity.y = -GRAVITY / 1.8;
+			velocity.y = -GRAVITY / 2.2;
 		}
 	}
 
 	override function update(elapsed:Float)
 	{
 		jumping();
-		super.update(elapsed);
 		movement();
+		super.update(elapsed);
 	}
 }
