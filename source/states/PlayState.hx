@@ -65,8 +65,8 @@ class PlayState extends FlxState
 	private function instantiateEntities():Void
 	{
 		player = new Player();
-		player.setSize(30, 45);
-		player.offset.set(78, 70);
+		player.setSize(25, 40);
+		player.offset.set(80, 75);
 
 		enemies = new FlxTypedGroup<Enemy>();
 
