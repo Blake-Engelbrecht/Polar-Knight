@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.5.0" orientation="orthogonal" renderorder="left-up" width="80" height="45" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="1">
+ <tileset firstgid="1" source="Environment.tsx"/>
+ <imagelayer id="7" name="background1" offsetx="1.33333" offsety="360">
+  <image source="../../../../../Photoshop/Game Assets/Polar-Knight/Winter Forest/Background 2.png" width="400" height="300"/>
+ </imagelayer>
+ <imagelayer id="8" name="Copy of background1" offsetx="401.333" offsety="360">
+  <image source="../../../../../Photoshop/Game Assets/Polar-Knight/Winter Forest/Background 2.png" width="400" height="300"/>
+ </imagelayer>
+ <imagelayer id="9" name="Copy of Copy of background1" offsetx="801.333" offsety="357.333">
+  <image source="../../../../../Photoshop/Game Assets/Polar-Knight/Winter Forest/Background 2.png" width="400" height="300"/>
+ </imagelayer>
+ <imagelayer id="10" name="Copy of Copy of Copy of background1" offsetx="1201.33" offsety="356">
+  <image source="../../../../../Photoshop/Game Assets/Polar-Knight/Winter Forest/Background 2.png" width="400" height="300"/>
+ </imagelayer>
+ <layer id="3" name="ground" width="80" height="45">
+  <data encoding="base64" compression="zlib">
+   eJzt0E0OQDAURtF2Lazcz0YkrAsDiQkJ2tA4J/li8CZ1QwAAAAAAAAAAAAAAStbEENpl3YVvH99+9Tes7YZl08WNGt5up+Hzdn9umKrdHxumbldawyoerz65bfcc7fYNn74v9z3Xv5tZ/s3NnCpz
+  </data>
+ </layer>
+</map>
