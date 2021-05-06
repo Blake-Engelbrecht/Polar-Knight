@@ -77,7 +77,7 @@ class PlayState extends FlxState
 		goal.setSize(16, 128);
 
 		deathPit = new DeathPit(0, 0);
-		deathPit.setSize(1280, 16);
+		deathPit.setSize(3840, 16);
 	}
 
 	private function addEntities():Void
