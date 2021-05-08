@@ -39,6 +39,7 @@ class PlayState extends FlxState
 		addEntities();
 
 		FlxG.camera.follow(player);
+		FlxG.mouse.visible = false;
 
 		super.create();
 	}
