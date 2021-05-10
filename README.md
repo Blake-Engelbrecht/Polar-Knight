@@ -1,7 +1,7 @@
 # **Polar Knight**
 ---
 <p align="center">
-  <img src="https://github.com/BlakeEngelbrecht95/Polar-Knight/blob/main/PKsc.png" width="250"> 
+  <img src="https://github.com/BlakeEngelbrecht95/Polar-Knight/blob/main/PKsc.png" width="400"> 
 </p>
 
 
