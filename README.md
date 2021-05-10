@@ -12,7 +12,7 @@
     to reach the end of the level.
 ---
 
-[Play Here]((https://blakeengelbrecht95.github.io/Polar-Knight/))
+[Play Here](https://blakeengelbrecht95.github.io/Polar-Knight/)
 
 ---
 
