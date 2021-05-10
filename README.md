@@ -1,5 +1,5 @@
 <h1 align="center">Polar Knight</h1>
----
+
 <p align="center">
   <img src="https://github.com/BlakeEngelbrecht95/Polar-Knight/blob/main/PKsc.png" width="600"> 
 </p>
