@@ -53,11 +53,11 @@ class Enemy extends FlxSprite
 		{
 			if (velocity.x < 0)
 			{
-				facing = FlxObject.LEFT;
+				facing = FlxObject.RIGHT;
 			}
 			else
 			{
-				facing = FlxObject.RIGHT;
+				facing = FlxObject.LEFT;
 			}
 		}
 	}
